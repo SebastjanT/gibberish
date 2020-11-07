@@ -59,9 +59,6 @@ export class LayoutComponent implements OnInit {
         this.router.navigateByUrl('/main');
       });
     }
-    else{
-      this.router.navigateByUrl('/login');
-    }
   }
 
 

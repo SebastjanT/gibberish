@@ -11,6 +11,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RegisterComponent } from './components/register/register.component';
 import { MainComponent } from './components/main/main.component';
+import { DeviceComponent } from './components/device/device.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { MainComponent } from './components/main/main.component';
     LoginComponent,
     RegisterComponent,
     MainComponent,
+    DeviceComponent,
   ],
   imports: [
     BrowserModule,

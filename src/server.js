@@ -8,7 +8,7 @@ const port= process.env.PORT || 8080;
 
 server.use(express.static(path.join(__dirname, 'gibberish-front', 'build')));
 
-server.get(/(\/login)|(\/register)|(\/main)/, (req, res, next) => {
+server.get(/(\/login)|(\/register)|(\/main)|(\/device)/, (req, res, next) => {
     res.sendFile(path.join(__dirname, 'gibberish-front', 'build', 'index.html'));
 });
 
