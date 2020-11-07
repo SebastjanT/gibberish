@@ -1,0 +1,35 @@
+<!--Navbar-->
+<nav class="navbar navbar-light bg-primary">
+  <a class="navbar-brand col-auto mr-auto">GibberishFront</a>
+  <div *ngIf="loggedIn()" class="btn-group d-inline-block col-lg-3 col-md-4 col-sm-6 col-xs-6 text-right">
+    <button type="button" class="btn btn-danger">
+      <fa-icon [icon]="faUser"></fa-icon> {{nameSurname}}
+    </button>
+    <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown" id="layout_dropdown">
+      <button class="btn btn-danger dropdown-toggle-split" ngbDropdownToggle></button>
+      <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+        <button ngbDropdownItem (click)="open(logout)" id="logout">Logout</button>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!loggedIn()">
+    <a class="text-light col-auto" routerLink="/login">Login</a>
+    <a class="text-light col-auto" routerLink="/register">Register</a>
+  </div>
+</nav>
+  
+<!--Content-->
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
+ 
+<!--Logout modal window-->
+<ng-template #logout let-modal>
+  <div class="modal-body">
+    <div>Are you sure you wish to logout</div>
+  </div>
+  <div class="modal-footer">
+    <button id="confirm" type="button" class="btn btn-primary" (click)="onLogout(modal)" routerLink="/login" >Logout</button>
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Logout click')">Cancel</button>
+  </div>
+</ng-template>

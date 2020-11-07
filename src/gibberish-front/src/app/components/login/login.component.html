@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col-4">
+    <form class="text-center" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+      <div class="row">
+        <input type="email" name="email" class="form-control text-input text-center" formControlName="email" placeholder="email" autocomplete="false">
+      </div>
+      <div class="row" *ngIf="loginForm.get('email').invalid && loginForm.get('email').dirty" class="alert-danger">
+        <ul>
+          <li *ngIf="loginForm.get('email').errors.required">This field is required</li>
+          <li *ngIf="loginForm.get('email').errors.email">Enter a valid email address</li>
+        </ul>
+      </div>
+
+      <div class="row">
+        <input type="password" name="password" class="form-control text-input text-center" formControlName="password" placeholder="password">
+      </div>
+
+      <div class="row" *ngIf="loginForm.get('password').invalid && loginForm.get('password').dirty" class="alert-danger">
+        <ul>
+          <li *ngIf="loginForm.get('password').errors.required">This field is required</li>
+          <li *ngIf="loginForm.get('password').errors.minlength">The password must be at minimum {{minPassLen}} characters long</li>
+        </ul>
+      </div>
+
+      <div class="row">
+        <button action="submit" [disabled]="!loginForm.valid" class="btn btn-success">Login</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!--Status-->
+<ng-template #statusModal let-modal>
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-global-message">Status</h4>
+  <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div>{{status}}</div>
+</div>
+</ng-template>

@@ -1,0 +1,76 @@
+<div class="row">
+  <div class="col-4">
+    <form class="text-center" [formGroup]="regForm" (ngSubmit)="onSubmit()">
+
+      <div class="row">
+        <input type="name" name="name" class="form-control text-input text-center" formControlName="name" placeholder="name" autocomplete="false">
+      </div>
+      <div class="row" *ngIf="regForm.get('name').invalid && regForm.get('name').dirty" class="alert-danger">
+        <ul>
+          <li *ngIf="regForm.get('email').errors.required">This field is required</li>
+        </ul>
+      </div>
+      <div class="row">
+        <input type="surname" name="surname" class="form-control text-input text-center" formControlName="surname" placeholder="surname" autocomplete="false">
+      </div>
+      <div class="row" *ngIf="regForm.get('surname').invalid && regForm.get('surname').dirty" class="alert-danger">
+        <ul>
+          <li *ngIf="regForm.get('surname').errors.required">This field is required</li>
+        </ul>
+      </div>
+      <div class="row">
+        <input type="tel" name="tel" class="form-control text-input text-center" formControlName="tel" placeholder="tel" autocomplete="false">
+      </div>
+      <div class="row" *ngIf="regForm.get('tel').invalid && regForm.get('tel').dirty" class="alert-danger">
+        <ul>
+          <li *ngIf="regForm.get('tel').errors.required">This field is required</li>
+        </ul>
+      </div>
+      <div class="row">
+        <input type="type" name="type" class="form-control text-input text-center" formControlName="type" placeholder="type" autocomplete="false">
+      </div>
+      <div class="row" *ngIf="regForm.get('type').invalid && regForm.get('type').dirty" class="alert-danger">
+        <ul>
+          <li *ngIf="regForm.get('type').errors.required">This field is required</li>
+        </ul>
+      </div>
+      <div class="row">
+        <input type="email" name="email" class="form-control text-input text-center" formControlName="email" placeholder="email" autocomplete="false">
+      </div>
+      <div class="row" *ngIf="regForm.get('email').invalid && regForm.get('email').dirty" class="alert-danger">
+        <ul>
+          <li *ngIf="regForm.get('email').errors.required">This field is required</li>
+          <li *ngIf="regForm.get('email').errors.email">Enter a valid email address</li>
+        </ul>
+      </div>
+
+      <div class="row">
+        <input type="password" name="password" class="form-control text-input text-center" formControlName="password" placeholder="password">
+      </div>
+
+      <div class="row" *ngIf="regForm.get('password').invalid && regForm.get('password').dirty" class="alert-danger">
+        <ul>
+          <li *ngIf="regForm.get('password').errors.required">This field is required</li>
+          <li *ngIf="regForm.get('password').errors.minlength">The password must be at minimum {{minPassLen}} characters long</li>
+        </ul>
+      </div>
+
+      <div class="row">
+        <button action="submit" [disabled]="!regForm.valid" class="btn btn-success">Register</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!--Status-->
+<ng-template #statusModal let-modal>
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-global-message">Status</h4>
+  <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div>{{status}}</div>
+</div>
+</ng-template>
