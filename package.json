@@ -1,0 +1,29 @@
+{
+  "name": "gibberish",
+  "version": "1.0.0",
+  "description": "The app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "startNg": "cd src/gibberish-front && ng serve",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SebastjanT/gibberish.git"
+  },
+  "keywords": [
+    "THE",
+    "APP"
+  ],
+  "author": "Team Gibberish",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SebastjanT/gibberish/issues"
+  },
+  "homepage": "https://github.com/SebastjanT/gibberish#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http-errors": "^1.8.0"
+  }
+}
