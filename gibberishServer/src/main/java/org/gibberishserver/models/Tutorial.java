@@ -1,4 +1,4 @@
-package org.gibberishserver.entities;
+package org.gibberishserver.models;
 
 import javax.persistence.*;
 

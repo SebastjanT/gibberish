@@ -4,7 +4,7 @@ import org.gibberishserver.apis.ApiBase;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import org.gibberishserver.entities.Tutorial;
+import org.gibberishserver.models.Tutorial;
 import org.gibberishserver.repositories.TutorialRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
