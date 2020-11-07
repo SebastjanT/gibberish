@@ -24,7 +24,16 @@ export class JwtService {
     //Trigger the login request to the api
 
     //Dummy login
-    this.saveJwt('aoeuaoeu."id":"0".aoeuaoeuueo');
+    if (email==='worker@test.com'){
+      this.saveJwt('aoeuaoeu.{"id": "1"}.aoeuaoeuueo');
+    }
+    else if (email==='provider@test.com'){
+      this.saveJwt('aoeuaoeu.{"id": "2"}.aoeuaoeuueo');
+    }
+    else{
+      this.saveJwt('aoeuaoeu.{"id": "0"}.aoeuaoeuueo');
+    }
+
     success();
   }
 
@@ -38,7 +47,7 @@ export class JwtService {
     if(this.JWT) {
       //return JSON.parse(JwtService.b64Utf8(this.JWT.split('.')[1]));
       //Dummy return
-      return ({id: 1});
+      return (JSON.parse(this.JWT.split('.')[1]));
     } else {
       return null;
     }

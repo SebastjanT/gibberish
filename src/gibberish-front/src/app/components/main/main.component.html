@@ -1,1 +1,9 @@
-<p>main works!</p>
+<div class="row" *ngIf="user.type=='customer'">
+    <h2>Customer can see this</h2>
+</div>
+<div class="row" *ngIf="user.type=='worker'">
+    <h2>Worker can see this</h2>
+</div>
+<div class="row" *ngIf="user.type=='provider'">
+    <h2>Provider can see this</h2>
+</div>

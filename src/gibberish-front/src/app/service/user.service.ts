@@ -8,6 +8,14 @@ export class UserService {
   constructor() { }
 
   public getAllData(idUser, callback){
-    callback({user: {name: 'test', surname: "user"}});
+    if (idUser==="1"){
+      callback({user: {name: 'Test', surname: "Worker", type: "worker"}});
+    }
+    else if(idUser==="2"){
+      callback({user: {name: 'Test', surname: "Provider", type: "provider"}});
+    }
+    else{
+      callback({user: {name: 'Test', surname: "Customer", type: "customer"}});
+    }
   }
 }
