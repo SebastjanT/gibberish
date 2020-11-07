@@ -34,7 +34,7 @@ export class RegisterComponent implements OnInit {
       Validators.minLength(this.minPassLen),
     ]),
     tel: new FormControl('', Validators.required),
-    type: new FormControl('', Validators.required),
+    type: new FormControl('customer', Validators.required),
   });
 
   onSuccess(){
