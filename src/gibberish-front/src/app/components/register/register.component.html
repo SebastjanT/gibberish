@@ -32,6 +32,7 @@
       <div class="row" *ngIf="regForm.get('type').invalid && regForm.get('type').dirty" class="alert-danger">
         <ul>
           <li *ngIf="regForm.get('type').errors.required">This field is required</li>
+          <li *ngIf="regForm.get('type').errors.pattern">The type must be customer, provider or worker</li>
         </ul>
       </div>
       <div class="row">
