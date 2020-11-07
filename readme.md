@@ -1,3 +1,3 @@
-# The app
+# Documentation links
 
-**The app**
+[README](/README.md)
