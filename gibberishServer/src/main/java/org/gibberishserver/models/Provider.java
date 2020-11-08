@@ -39,8 +39,7 @@ public class Provider {
     public Provider() {
     }
 
-    public Provider(long provider_id, String location, String region_unit, String name, String address, String phone, String email, String website) {
-        this.provider_id = provider_id;
+    public Provider(String location, String region_unit, String name, String address, String phone, String email, String website) {
         this.location = location;
         this.region_unit = region_unit;
         this.name = name;

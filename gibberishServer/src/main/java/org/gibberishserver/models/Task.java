@@ -30,7 +30,7 @@ public class Task {
     @Column(name = "payment", nullable = false)
     private double payment;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, optional = true)
     private User worker;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -42,8 +42,7 @@ public class Task {
     public Task() {
     }
 
-    public Task(long task_id, Date date, String location, String status, double payment, User worker, User customer, Provider provider) {
-        this.task_id = task_id;
+    public Task(Date date, String location, String status, double payment, User worker, User customer, Provider provider) {
         this.date = date;
         this.location = location;
         this.status = status;
