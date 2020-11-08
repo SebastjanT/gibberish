@@ -1,6 +1,9 @@
 # Gibberish app -  need changing
 
 # Motivation
+Over the past year we noticed, it's rather hard to be an elder these times. Especially with all the pandemic thing going on.
+That's why we made a webapp for easier access to help with basic daily tasks, such ass 
+food delivery, grocery shopping and health care. 
 
 # Tech $ Frameworks
   * Java
