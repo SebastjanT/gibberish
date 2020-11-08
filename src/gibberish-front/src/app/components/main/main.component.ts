@@ -34,6 +34,7 @@ export class MainComponent implements OnInit {
   getUserData(){
     this.user=new User();
     this.userService.getAllData(this.jwtService.getData().id, data=>{
+      this.user.user_id=data.user_id;
       this.user.name=data.name;
       this.user.surname=data.surname;
       this.user.user_type=(data.user_type=='client') ? 'customer' : data.user_type;
@@ -54,6 +55,7 @@ export class MainComponent implements OnInit {
       this.provider=new Provider();
       if (this.user.user_type=='provider'){
         this.taskService.getProvider('0',(data)=>{
+          this.provider.provider_id=data.provider_id;
           this.provider.address=data.address;
           this.provider.email=data.email;
           this.provider.location=data.location;
@@ -65,7 +67,7 @@ export class MainComponent implements OnInit {
   }
 
   acceptTask(idTask){
-    this.taskService.applyForTask(idTask, this.jwtService.getData().id, ()=>{this.router.navigateByUrl('/main')}, ()=>{});
+    this.taskService.applyForTask(idTask, this.jwtService.getData().id, ()=>{this.taskService.getAllTasks((data)=>{this.tasks=data})}, ()=>{});
   }
 
   ngOnInit(): void {

@@ -13,20 +13,23 @@
     </div>
 </div>
 <div class="row" *ngIf="user.user_type=='worker'">
-    <div *ngFor="let task of tasks" class="col border border-info p-2 bg-white rounded mt-4 shadow-lg">
-        <div class="row">
-            <div class="col-6">
-                <h5>{{task.customer.surname}}, {{task.customer.name}}</h5>
-                <h5>Location: {{task.customer.address}}</h5>
-                <h5>Phone: {{task.customer.phone}}</h5>
-            </div>
-            <div class="col-6">
-                <h5>Status: {{task.status}}</h5>
-                <h5>Date: {{task.date}}</h5>
-                <h5>Payment: {{task.payment}}</h5>
+    <div class="col">
+        <div *ngFor="let task of tasks">
+            <div *ngIf="task.worker==null || user.user_id==task.worker.user_id" class="row border border-info p-2 bg-white rounded mt-4 shadow-lg mr-4 ml-4">
+                <div class="col-6">
+                    <h5>{{task.customer.surname}}, {{task.customer.name}} - {{task.provider.name}}</h5>
+                    <h5>Location: {{task.customer.address}}</h5>
+                    <h5>Phone: {{task.customer.phone}}</h5>
+                </div>
+                <div class="col-6">
+                    <h5>Status: {{task.status}}</h5>
+                    <h5>Date: {{task.date}}</h5>
+                    <h5>Payment: {{task.payment}}</h5>
+                </div>
+
+                <div *ngIf="task.worker==null" class="row"><div class="col"><button type="button" class="btn btn-outline-dark" (click)="acceptTask(task.task_id)">Accept</button></div></div>
             </div>
         </div>
-        <div *ngIf="task.worker==null" class="row"><div class="col"><button type="button" class="btn btn-outline-dark" (click)="acceptTask(task.task_id)">Accept</button></div></div>
     </div>
 </div>
 <div class="row" *ngIf="user.user_type=='provider'">
@@ -38,22 +41,24 @@
                 <h5>Phone: {{provider.phone}}</h5>
             </div>
             <div class="col-6">
-                <h5>Websice: {{provider.website}}</h5>
+                <h5>Website: {{provider.website}}</h5>
                 <h5>Address: {{provider.address}}</h5>
             </div>
         </div>
-    </div>
-    <div *ngFor="let task of tasks" class="col border border-info p-2 bg-white rounded mt-4 shadow-lg">
-        <div class="row">
-            <div class="col-6">
-                <h5>{{task.customer.surname}}, {{task.customer.name}}</h5>
-                <h5>Location: {{task.customer.address}}</h5>
-                <h5>Phone: {{task.customer.phone}}</h5>
-            </div>
-            <div class="col-6">
-                <h5>Status: {{task.status}}</h5>
-                <h5>Date: {{task.date}}</h5>
-                <h5>Payment: {{task.payment}}</h5>
+        <div *ngFor="let task of tasks">
+            <div *ngIf="task.provider.provider_id==provider.provider_id" class="row border border-info p-2 bg-white rounded mt-4 shadow-lg mr-4 ml-4">
+                <div class="col-6">
+                    <h5>{{task.customer.surname}}, {{task.customer.name}} - {{task.provider.name}}</h5>
+                    <h5>Location: {{task.customer.address}}</h5>
+                    <h5>Phone: {{task.customer.phone}}</h5>
+                </div>
+                <div class="col-6">
+                    <h5>Status: {{task.status}}</h5>
+                    <h5>Date: {{task.date}}</h5>
+                    <h5>Payment: {{task.payment}}</h5>
+                </div>
+
+                <div *ngIf="task.worker==null" class="row"><div class="col"><button type="button" class="btn btn-outline-dark" (click)="acceptTask(task.task_id)">Accept</button></div></div>
             </div>
         </div>
     </div>
