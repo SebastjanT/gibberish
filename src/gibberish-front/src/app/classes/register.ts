@@ -2,7 +2,7 @@ export class Register {
     name: string;
     surname: string;
     email: string;
-    password: string;
-    tel: string;
-    type: string;
+    phone: string;
+    user_type: string;
+    address: string;
 }

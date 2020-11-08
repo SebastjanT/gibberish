@@ -36,6 +36,14 @@
         </ul>
       </div>
       <div class="row">
+        <input address="text" name="address" class="form-control text-input text-center" formControlName="address" placeholder="address" autocomplete="false">
+      </div>
+      <div class="row" *ngIf="regForm.get('address').invalid && regForm.get('address').dirty" class="alert-danger">
+        <ul>
+          <li *ngIf="regForm.get('address').errors.required">This field is required</li>
+        </ul>
+      </div>
+      <div class="row">
         <input type="email" name="email" class="form-control text-input text-center" formControlName="email" placeholder="email" autocomplete="false">
       </div>
       <div class="row" *ngIf="regForm.get('email').invalid && regForm.get('email').dirty" class="alert-danger">

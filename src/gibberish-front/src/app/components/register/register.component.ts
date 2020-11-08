@@ -34,6 +34,7 @@ export class RegisterComponent implements OnInit {
       Validators.minLength(this.minPassLen),
     ]),
     tel: new FormControl('', Validators.required),
+    address: new FormControl('', Validators.required),
     type: new FormControl('customer', [
       Validators.required,
       Validators.pattern('^customer|worker|provider'),
@@ -61,9 +62,10 @@ export class RegisterComponent implements OnInit {
     register.name=this.regForm.get('name').value;
     register.surname=this.regForm.get('surname').value;
     register.email=this.regForm.get('email').value;
-    register.password=this.regForm.get('password').value;
-    register.tel=this.regForm.get('tel').value;
-    register.type=this.regForm.get('type').value;
+    //register.password=this.regForm.get('password').value;
+    register.phone=this.regForm.get('tel').value;
+    register.user_type=this.regForm.get('type').value;
+    register.address=this.regForm.get('address').value;
     this.jwtService.register(register, ()=>this.onSuccess(), (data)=>this.onFailure(data));
   }
 

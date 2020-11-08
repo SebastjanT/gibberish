@@ -1,9 +1,9 @@
-<div class="row" *ngIf="user.type=='customer'">
+<div class="row" *ngIf="layoutComponent.user.user_type=='customer'">
     <h2>Customer can see this</h2>
 </div>
-<div class="row" *ngIf="user.type=='worker'">
+<div class="row" *ngIf="layoutComponent.user.user_type=='worker'">
     <h2>Worker can see this</h2>
 </div>
-<div class="row" *ngIf="user.type=='provider'">
+<div class="row" *ngIf="layoutComponent.user.user_type=='provider'">
     <h2>Provider can see this</h2>
 </div>

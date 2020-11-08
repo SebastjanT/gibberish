@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service'
+import { HttpClient } from '@angular/common/http';
+import { Register } from '../classes/register';
 
 @Injectable({
   providedIn: 'root'
@@ -11,13 +13,22 @@ export class JwtService {
 
   constructor(
     private cookieService: CookieService,
+    private httpClient: HttpClient,
   ) { }
 
-  public register({email, password}, success, failure){
+  public register(register:Register, success, failure){
     //Trigger the login request to the api
+    this.httpClient.post(`http://awseb-awseb-1qbqaq27at9fe-1327949958.eu-central-1.elb.amazonaws.com/api/users`, register).subscribe(
+      (data)=>{
+        success();
+      },
+      (error)=>{
+        failure(error.statusText);
+      }
+    );
 
     //Dummy register
-    success();
+    //success();
   }
 
   public login({email, password}, success, failure){
