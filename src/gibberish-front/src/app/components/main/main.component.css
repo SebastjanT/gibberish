@@ -1,5 +1,20 @@
 
-#u_customer {
+#u_customer,
+#u_worker,
+#u_provider {
     border: solid 1px#C5E1A5 ;
     background-color: whitesmoke;
+}
+
+.tasks, 
+.tasks2,
+#task {
+    border: solid 1px#C5E1A5 !important;
+    background-color: white !important;
+}
+
+.btn-dark {
+    border: 0;
+    background-color:#EF9A9A;
+    border-radius: 15px;
 }

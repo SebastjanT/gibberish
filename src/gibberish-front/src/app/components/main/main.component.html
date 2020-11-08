@@ -13,24 +13,30 @@
         </div>
     </div>
 </div>
+<div class="row" *ngIf="user.user_type=='worker'">
+    <div class="col p-4 rounded mt-4 shadow-sm w-100" id="u_worker">
+        <div *ngFor="let task of tasks">
+            <div *ngIf="task.worker==null || user.user_id==task.worker.user_id" class="row p-2 bg-white rounded mt-4 shadow-sm mr-4 ml-4" id="tasks">
+                <div class="col-12">
+                    <h4>{{task.customer.surname}}, {{task.customer.name}} - <b>{{task.provider.name}}</b></h4>
+                    <hr />
+                </div>
+                <div class="col-6">
+                    <h5>Location: {{task.customer.address}}</h5>
+                    <h5>Phone: {{task.customer.phone}}</h5>
+                </div>
+                <div class="col-6">
+                    <h5>Status: {{task.status}}</h5>
+                    <h5>Date: {{task.date}}</h5>
+                    <h5>Payment: {{task.payment}}</h5>
+                </div>
 
-<div class="row" *ngIf="user.user_type=='u_worker'">
-    <div *ngFor="let task of tasks" class="col p-4 rounded mt-4 shadow-sm" id="u_worker">
-
-        <h2>{{task.customer.surname}}, {{task.customer.name}}</h2>
-        <hr />
-        <div class="row">
-            <div class="col-6">
-                <h5><b>Location: </b>{{task.customer.address}}</h5>
-                <h5><b>Phone:</b> {{task.customer.phone}}</h5>
-            </div>
-            <div class="col-6">
-                <h5><b>Status:</b> {{task.status}}</h5>
-                <h5><b>Date:</b> {{task.date}}</h5>
-                <h5><b>Payment:</b> {{task.payment}}</h5>
+                <div *ngIf="task.worker==null" class="row w-100 m-3">
+                    <div class="col"><button type="button" class="btn btn-dark w-100" (click)="acceptTask(task.task_id)">Accept</button>
+                    </div>
+                </div>
             </div>
         </div>
-        <div *ngIf="task.worker==null" class="row"><div class="col"><button type="button" class="btn btn-outline-dark" (click)="acceptTask(task.task_id)">Accept</button></div></div>
     </div>
 </div>
 
@@ -48,18 +54,27 @@
                 <h5><b>Address: </b>{{provider.address}}</h5>
             </div>
         </div>
-    </div>
-    <div *ngFor="let task of tasks" class="col border border-info p-2 bg-white rounded mt-4 shadow-lg">
-        <div class="row">
-            <div class="col-6">
-                <h5>{{task.customer.surname}}, {{task.customer.name}}</h5>
-                <h5>Location: {{task.customer.address}}</h5>
-                <h5>Phone: {{task.customer.phone}}</h5>
-            </div>
-            <div class="col-6">
-                <h5>Status: {{task.status}}</h5>
-                <h5>Date: {{task.date}}</h5>
-                <h5>Payment: {{task.payment}}</h5>
+        <div *ngFor="let task of tasks">
+            <div *ngIf="task.provider.provider_id==provider.provider_id" class="row border p-2 bg-white rounded mt-4 shadow-sm mr-4 ml-4" id="tasks2">
+                <div class="col-12">
+                    <h4>{{task.customer.surname}}, {{task.customer.name}} - <b>{{task.provider.name}}</b></h4>
+                    <hr />
+                </div>
+                <div class="col-6">
+                    <h5>Location: {{task.customer.address}}</h5>
+                    <h5>Phone: {{task.customer.phone}}</h5>
+                </div>
+                <div class="col-6">
+                    <h5>Status: {{task.status}}</h5>
+                    <h5>Date: {{task.date}}</h5>
+                    <h5>Payment: {{task.payment}}</h5>
+                </div>
+
+                <div *ngIf="task.worker==null" class="row w-100 m-3">
+                    <div class="col">
+                        <button type="button" class="btn btn-dark w-100" (click)="acceptTask(task.task_id)">Accept</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

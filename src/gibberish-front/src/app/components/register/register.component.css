@@ -1,0 +1,19 @@
+#loginTitle {
+    font-family: 'Roboto', sans-serif !important;
+    text-transform: uppercase !important;
+    font-weight: 700;
+    font-size: xx-large;
+}
+
+#registerButton {
+    background-color:#EF9A9A;
+    border-radius: 15px;
+}
+
+#logoutButton {
+    border-radius: 15px;
+}
+
+.text-input  {
+    border-radius: 15px;
+}

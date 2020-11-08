@@ -1,8 +1,11 @@
-<div class="row">
-  <div class="col-4">
+<div class="row w-100 mt-5">
+  <div class="col-12 align-self-middle w-100">
+    <h1 class="text-dark text-center" id="loginTitle" >REGISTER</h1>
+  </div>
+  <div class="col-12 mt-5">
     <form class="text-center" [formGroup]="regForm" (ngSubmit)="onSubmit()">
 
-      <div class="row">
+      <div class="row m-3">
         <input type="text" name="name" class="form-control text-input text-center" formControlName="name" placeholder="name" autocomplete="false">
       </div>
       <div class="row" *ngIf="regForm.get('name').invalid && regForm.get('name').dirty" class="alert-danger">
@@ -10,7 +13,7 @@
           <li *ngIf="regForm.get('email').errors.required">This field is required</li>
         </ul>
       </div>
-      <div class="row">
+      <div class="row m-3">
         <input type="text" name="surname" class="form-control text-input text-center" formControlName="surname" placeholder="surname" autocomplete="false">
       </div>
       <div class="row" *ngIf="regForm.get('surname').invalid && regForm.get('surname').dirty" class="alert-danger">
@@ -18,7 +21,7 @@
           <li *ngIf="regForm.get('surname').errors.required">This field is required</li>
         </ul>
       </div>
-      <div class="row">
+      <div class="row m-3">
         <input type="text" name="tel" class="form-control text-input text-center" formControlName="tel" placeholder="tel" autocomplete="false">
       </div>
       <div class="row" *ngIf="regForm.get('tel').invalid && regForm.get('tel').dirty" class="alert-danger">
@@ -26,7 +29,7 @@
           <li *ngIf="regForm.get('tel').errors.required">This field is required</li>
         </ul>
       </div>
-      <div class="row">
+      <div class="row m-3">
         <input type="text" name="type" class="form-control text-input text-center" formControlName="type" placeholder="type" autocomplete="false">
       </div>
       <div class="row" *ngIf="regForm.get('type').invalid && regForm.get('type').dirty" class="alert-danger">
@@ -35,7 +38,7 @@
           <li *ngIf="regForm.get('type').errors.pattern">The type must be customer, provider or worker</li>
         </ul>
       </div>
-      <div class="row">
+      <div class="row m-3">
         <input address="text" name="address" class="form-control text-input text-center" formControlName="address" placeholder="address" autocomplete="false">
       </div>
       <div class="row" *ngIf="regForm.get('address').invalid && regForm.get('address').dirty" class="alert-danger">
@@ -43,7 +46,7 @@
           <li *ngIf="regForm.get('address').errors.required">This field is required</li>
         </ul>
       </div>
-      <div class="row">
+      <div class="row m-3">
         <input type="email" name="email" class="form-control text-input text-center" formControlName="email" placeholder="email" autocomplete="false">
       </div>
       <div class="row" *ngIf="regForm.get('email').invalid && regForm.get('email').dirty" class="alert-danger">
@@ -53,7 +56,7 @@
         </ul>
       </div>
 
-      <div class="row">
+      <div class="row m-3">
         <input type="password" name="password" class="form-control text-input text-center" formControlName="password" placeholder="password">
       </div>
 
@@ -64,8 +67,8 @@
         </ul>
       </div>
 
-      <div class="row">
-        <button action="submit" [disabled]="!regForm.valid" class="btn btn-success">Register</button>
+      <div class="row m-3">
+        <button action="submit" [disabled]="!regForm.valid" class="btn m-3 p-2 w-100" id="registerButton">Register</button>
       </div>
     </form>
   </div>

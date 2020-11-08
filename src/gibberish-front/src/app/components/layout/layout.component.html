@@ -34,7 +34,7 @@
     <div>Are you sure you wish to logout? :(</div>
   </div>
   <div class="modal-footer">
-    <button id="confirm" type="button" class="btn btn-dark button-lg" (click)="onLogout(modal)" routerLink="/login" >Logout</button>
+    <button id="confirm" type="button" class="btn btn-dark button-lg" id="logoutButton" (click)="onLogout(modal)" routerLink="/login" >Logout</button>
     <button type="button" class="btn btn-outline-dark" (click)="modal.close('Logout click')">Cancel</button>
   </div>
 </ng-template>

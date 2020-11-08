@@ -38,7 +38,7 @@ export class TaskService {
   }
 
   public applyForTask(idTask, idUser, success, failure){
-    this.httpClient.post(`http://awseb-awseb-1qbqaq27at9fe-1327949958.eu-central-1.elb.amazonaws.com/api/task/update/${idTask}/${idUser}`, '', this.headers).subscribe(
+    this.httpClient.post(`http://awseb-awseb-1qbqaq27at9fe-1327949958.eu-central-1.elb.amazonaws.com/api/tasks/update/${idTask}/${idUser}`, '', this.headers).subscribe(
       ()=>{
         success();
       },
