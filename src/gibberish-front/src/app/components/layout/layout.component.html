@@ -1,25 +1,54 @@
 <!--Navbar-->
 <nav id="navbar" class="navbar navbar-light">
-  <a class="navbar-brand col-auto mr-auto">Gibberish</a>
+  <a class="navbar-brand col-auto mr-auto">Gibberish+</a>
+<!--
   <div *ngIf="loggedIn()" class="btn-group d-inline-block col-lg-3 col-md-4 col-sm-6 col-xs-6 text-right">
     <button type="button button-lg" class="btn btn-outline-dark button-lg">
       <fa-icon [icon]="faUser"></fa-icon> {{nameSurname}}
     </button>
+
     <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown" id="layout_dropdown">
       <button class="btn btn-outline-dark button-lg dropdown-toggle-split" ngbDropdownToggle></button>
+      
       <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
         <button ngbDropdownItem (click)="open(logout)" id="logout">Logout</button>
       </div>
+
     </div>
   </div>
   <div *ngIf="!loggedIn()">
     <a class="text-light col-auto" routerLink="/login">Login</a>
     <a class="text-light col-auto" routerLink="/register">Register</a>
   </div>
+  -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav w-100 text-right">
+      <li class="nav-item w-100">
+        <a class="nav-link disabled" href="#">
+          <fa-icon [icon]="faUser"></fa-icon> {{nameSurname}}</a>
+      </li>
+      <li class="nav-item active w-100" *ngIf="loggedIn()">
+        <a class="nav-link" id="logout" (click)="open(logout)" href="">Logout</a>
+      </li>
+      <div *ngIf="!loggedIn()">
+      <li class="nav-item w-100">
+        <a class="nav-link" href="#" routerLink="/login">Login</a>
+      </li>
+      <li class="nav-item w-100">
+        <a class="nav-link" href="#" routerLink="/register">Register</a>
+      </li>
+      </div>
+      
+    </ul>
+  </div>
+
 </nav>
   
 <!--Content-->
-<div class="container">
+<div class="container w-100">
     <router-outlet></router-outlet>
 </div>
  
