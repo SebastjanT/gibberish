@@ -1,20 +1,25 @@
-<div class="row" *ngIf="layoutComponent.user.user_type=='customer'">
-    <div class="col border border-info p-2 bg-white rounded mt-4 shadow-lg">
-        <h2>{{layoutComponent.user.surname}}, {{layoutComponent.user.name}}</h2><br />
-        <div class="row">
-            <div class="col-6">
-                <h5>Email: {{layoutComponent.user.email}}</h5>
-                <h5>Phone: {{layoutComponent.user.phone}}</h5>
-            </div>
-            <div class="col-6">
-                <h5>Address: {{layoutComponent.user.address}}</h5>
+<div class="outer">
+    <div class="row" *ngIf="layoutComponent.user.user_type=='customer'">
+
+        <div class="col p-4 rounded mt-5 shadow-sm" id="u_customer">
+            <h3>{{layoutComponent.user.surname}}, {{layoutComponent.user.name}}</h3>
+            <hr />
+            <div class="row">
+                <div class="col-6">
+                    <h6><b>Email:</b> {{layoutComponent.user.email}}</h6>
+                    <h6><b>Phone:</b> {{layoutComponent.user.phone}}</h6>
+                </div>
+                <div class="col-6">
+                    <h6><b>Address:</b> {{layoutComponent.user.address}}</h6>
+                </div>
             </div>
         </div>
+        
     </div>
-</div>
-<div class="row" *ngIf="layoutComponent.user.user_type=='worker'">
-    <h2>Worker can see this</h2>
-</div>
-<div class="row" *ngIf="layoutComponent.user.user_type=='provider'">
-    <h2>Provider can see this</h2>
+    <div class="row" *ngIf="layoutComponent.user.user_type=='worker'">
+        <h2>Worker can see this</h2>
+    </div>
+    <div class="row" *ngIf="layoutComponent.user.user_type=='provider'">
+        <h2>Provider can see this</h2>
+    </div>
 </div>
