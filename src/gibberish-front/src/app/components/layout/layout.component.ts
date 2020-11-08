@@ -19,6 +19,7 @@ export class LayoutComponent implements OnInit {
   faUser=faUser;
   faUsers=faUsers;
   user:User;
+  device:boolean=false;
 
   constructor(
     private modalService: NgbModal,
@@ -65,7 +66,15 @@ export class LayoutComponent implements OnInit {
     }
     else{
       this.user=new User();
+      if (!this.device){
+        this.router.navigateByUrl('/login');
+      }
     }
+  }
+
+  switchToDevice(){
+    this.device=true;
+    this.router.navigateByUrl('/device');
   }
 
 

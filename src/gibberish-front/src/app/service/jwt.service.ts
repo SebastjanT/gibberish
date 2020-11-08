@@ -21,7 +21,7 @@ export class JwtService {
 
   public register(register:Register, success, failure){
     //Trigger the login request to the api
-    this.httpClient.post(`http://awseb-awseb-1qbqaq27at9fe-1327949958.eu-central-1.elb.amazonaws.com/users`, register, this.headers).subscribe(
+    this.httpClient.post(`http://awseb-awseb-1qbqaq27at9fe-1327949958.eu-central-1.elb.amazonaws.com/api/users/insert`, register, this.headers).subscribe(
       (data)=>{
         success();
       },
