@@ -1,22 +1,34 @@
 <div class="row min-vh-100 mt-4">
     <div class="col-sm">
-        <button type="button" class="btn btn-success w-100 h-4">
+        <button type="button" class="btn btn-danger w-100 h-4" (click)="taskInit('food')">
            <fa-icon [icon]="faUtensils" size="4x"></fa-icon><br /><h2>Hrana</h2>
         </button>
     </div>
     <div class="col-sm">
-        <button type="button" class="btn btn-primary w-100">
+        <button type="button" class="btn btn-danger w-100" (click)="taskInit('shop')">
             <fa-icon [icon]="faShoppingBasket" size="4x"></fa-icon><br /><h2>Nakupi</h2>
         </button>
     </div>
     <div class="col-sm">
-        <button type="button" class="btn btn-warning w-100">
+        <button type="button" class="btn btn-danger w-100" (click)="taskInit('help')">
             <fa-icon [icon]="faHandsHelping" size="4x"></fa-icon><br /><h2>Pomoč</h2>
         </button>
     </div>
     <div class="col-sm">
-        <button type="button" class="btn btn-danger w-100">
+        <button type="button" class="btn btn-danger w-100" (click)="taskInit('urgent')">
             <fa-icon [icon]="faExclamationTriangle" size="4x"></fa-icon><br /><h2>Nujno</h2>
         </button>
     </div>
 </div>
+
+<!--Status-->
+<ng-template #successModal let-modal>
+<div class="modal-body">
+  <div class="text-center"><fa-icon [icon]="faThumbsUp" [styles]="{'stroke': 'green', 'color': 'green'}" size="10x"></fa-icon></div>
+</div>
+</ng-template>
+<ng-template #failureModal let-modal>
+<div class="modal-body">
+  <div class="text-center"><fa-icon [icon]="faTimesCircle" [styles]="{'stroke': 'red', 'color': 'red'}" size="10x"></fa-icon></div>
+</div>
+</ng-template>
