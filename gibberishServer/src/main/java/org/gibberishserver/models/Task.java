@@ -31,29 +31,26 @@ public class Task {
     private double payment;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Column(name = "worker", nullable = false)
-    private User worker_id;
+    private User worker;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Column(name = "client", nullable = false)
-    private User client_id;
+    private User customer;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Column(name = "provider", nullable = false)
-    private Provider provider_id;
+    private Provider provider;
 
     public Task() {
     }
 
-    public Task(long task_id, Date date, String location, String status, double payment, User worker_id, User client_id, Provider provider_id) {
+    public Task(long task_id, Date date, String location, String status, double payment, User worker, User customer, Provider provider) {
         this.task_id = task_id;
         this.date = date;
         this.location = location;
         this.status = status;
         this.payment = payment;
-        this.worker_id = worker_id;
-        this.client_id = client_id;
-        this.provider_id = provider_id;
+        this.worker = worker;
+        this.customer = customer;
+        this.provider = provider;
     }
 
     public long getTask_id() {
@@ -76,15 +73,15 @@ public class Task {
         return payment;
     }
 
-    public User getWorker_id() {
-        return worker_id;
+    public User getWorker() {
+        return worker;
     }
 
-    public User getClient_id() {
-        return client_id;
+    public User getCustomer() {
+        return customer;
     }
 
-    public Provider getProvider_id() {
-        return provider_id;
+    public Provider getProvider() {
+        return provider;
     }
 }

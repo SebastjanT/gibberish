@@ -24,17 +24,16 @@ public class Device {
     private String status;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Column(name = "user", nullable = false)
-    private User user_id;
+    private User user;
 
     public Device() {
     }
 
-    public Device(long device_id, long device_number, String status, User user_id) {
+    public Device(long device_id, long device_number, String status, User user) {
         this.device_id = device_id;
         this.device_number = device_number;
         this.status = status;
-        this.user_id = user_id;
+        this.user = user;
     }
 
     public long getDevice_id() {
@@ -49,7 +48,7 @@ public class Device {
         return status;
     }
 
-    public User getUser_id() {
-        return user_id;
+    public User getUser() {
+        return user;
     }
 }

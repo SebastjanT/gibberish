@@ -1,6 +1,5 @@
-package org.gibberishserver.apis.controllers;
+package org.gibberishserver.apis;
 
-import org.gibberishserver.apis.ApiBase;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -24,10 +23,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
-public class TutorialController extends ApiBase{
+public class TutorialController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TutorialController.class);
-    
+
     @Autowired
     TutorialRepository tutorialRepository;
 
