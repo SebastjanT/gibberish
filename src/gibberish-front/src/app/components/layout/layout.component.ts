@@ -55,6 +55,7 @@ export class LayoutComponent implements OnInit {
       this.userService.getAllData(this.jwtService.getData().id, data=>{
         this.user.name=data.user.name;
         this.user.surname=data.user.surname;
+        this.user.user_type=data.user.user_type;
         this.nameSurnameService.changeMessage(`${this.user.name} ${this.user.surname}`);
         this.router.navigateByUrl('/main');
       });

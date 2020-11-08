@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { UserService } from '../../service/user.service';
+import { User } from '../../classes/user';
+import { JwtService } from '../../service/jwt.service';
+import { LayoutComponent } from '../../components/layout/layout.component'
 
 @Component({
   selector: 'app-main',
@@ -7,7 +12,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private modalService: NgbModal,
+    public layoutComponent: LayoutComponent,
+  ) { }
 
   ngOnInit(): void {
   }
