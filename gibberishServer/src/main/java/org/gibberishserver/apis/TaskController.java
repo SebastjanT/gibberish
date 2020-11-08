@@ -23,6 +23,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -69,7 +70,7 @@ public class TaskController {
         try {
             List<Task> tasks = new ArrayList<Task>();
 
-            taskrepository.findAll().forEach(tasks::add);
+            tasks = taskrepository.findAll();
 
             if (tasks.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -90,14 +91,37 @@ public class TaskController {
         @ApiResponse(responseCode = "500", description = "Internal server error",
                 content = @Content)})
     @PostMapping("/{device_id}")
-    public ResponseEntity<Task> createTasks(@PathVariable("device_id") long device_id) {
+    public ResponseEntity<Task> createTasks(@PathVariable("device_id") long device_id, @RequestBody String service_type) {
         try {
             Optional<Device> deviceData = deviceRepository.findById(device_id);
             if (!deviceData.isPresent()) {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             }
 
-            Optional<Provider> providerData = providerRepository.findById(Long.valueOf(0));
+            //Za demonstracijo zaenkrat hard-coded
+            Optional<Provider> providerData = null;
+            switch (service_type) {
+                case "food": {
+                    providerData = providerRepository.findById(Long.valueOf(0));
+                    break;
+                }
+                case "shop": {
+                    providerData = providerRepository.findById(Long.valueOf(1));
+                    break;
+                }
+                case "help": {
+                    providerData = providerRepository.findById(Long.valueOf(2));
+                    break;
+                }
+                case "urgent": {
+                    providerData = providerRepository.findById(Long.valueOf(3));
+                    break;
+                }
+                default: {
+                    break;
+                }
+
+            }
             if (!providerData.isPresent()) {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             }

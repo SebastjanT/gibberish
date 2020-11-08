@@ -3,7 +3,6 @@ package org.gibberishserver.models;
 import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -30,13 +29,13 @@ public class Task {
     @Column(name = "payment", nullable = false)
     private double payment;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = true)
+    @ManyToOne
     private User worker;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     private User customer;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     private Provider provider;
 
     public Task() {

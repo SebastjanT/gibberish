@@ -1,24 +1,9 @@
 package org.gibberishserver.apis;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import org.gibberishserver.models.Tutorial;
-import org.gibberishserver.repositories.TutorialRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -26,9 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class TutorialController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TutorialController.class);
-
-    @Autowired
-    TutorialRepository tutorialRepository;
 
 //    @GetMapping("/tutorials")
 //    public ResponseEntity<List<Tutorial>> getAllTutorials(@RequestParam(required = false) String title) {
@@ -122,5 +104,4 @@ public class TutorialController {
 //            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 //        }
 //    }
-
 }
