@@ -83,4 +83,12 @@ public class Task {
     public Provider getProvider() {
         return provider;
     }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setWorker(User worker) {
+        this.worker = worker;
+    }
 }
