@@ -1,6 +1,6 @@
 <div class="row w-100 mt-5">
   <div class="col-12 align-self-middle w-100">
-    <h1 class="text-dark text-center" id="loginTitle">Login</h1>
+    <h1 class="text-dark text-center" id="loginTitle" >Login</h1>
   </div>
   <div class="col-12 mt-5">
     <form class="text-center" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
@@ -11,7 +11,6 @@
       <div class="row" *ngIf="loginForm.get('email').invalid && loginForm.get('email').dirty" class="alert-danger">
         <ul>
           <li class="m-3" *ngIf="loginForm.get('email').errors.required">This field is required</li>
-          <br />
           <li  class="m-3" *ngIf="loginForm.get('email').errors.email">Enter a valid email address</li>
         </ul>
       </div>

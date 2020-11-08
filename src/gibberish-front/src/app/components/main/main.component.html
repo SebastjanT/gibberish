@@ -14,18 +14,20 @@
     </div>
 </div>
 
-<div class="row" *ngIf="user.user_type=='worker'">
+<div class="row" *ngIf="user.user_type=='u_worker'">
     <div *ngFor="let task of tasks" class="col p-4 rounded mt-4 shadow-sm" id="u_worker">
+
+        <h2>{{task.customer.surname}}, {{task.customer.name}}</h2>
+        <hr />
         <div class="row">
             <div class="col-6">
-                <h5>{{task.customer.surname}}, {{task.customer.name}}</h5>
-                <h5>Location: {{task.customer.address}}</h5>
-                <h5>Phone: {{task.customer.phone}}</h5>
+                <h5><b>Location: </b>{{task.customer.address}}</h5>
+                <h5><b>Phone:</b> {{task.customer.phone}}</h5>
             </div>
             <div class="col-6">
-                <h5>Status: {{task.status}}</h5>
-                <h5>Date: {{task.date}}</h5>
-                <h5>Payment: {{task.payment}}</h5>
+                <h5><b>Status:</b> {{task.status}}</h5>
+                <h5><b>Date:</b> {{task.date}}</h5>
+                <h5><b>Payment:</b> {{task.payment}}</h5>
             </div>
         </div>
         <div *ngIf="task.worker==null" class="row"><div class="col"><button type="button" class="btn btn-outline-dark" (click)="acceptTask(task.task_id)">Accept</button></div></div>
@@ -33,16 +35,17 @@
 </div>
 
 <div class="row" *ngIf="user.user_type=='provider'">
-    <div class="col border border-info p-2 bg-white rounded mt-4 shadow-lg">
-        <h2>{{provider.name}}</h2><br />
+    <div class="col p-4 rounded mt-4 shadow-sm" id="u_provider">
+        <h2>{{provider.name}}</h2>
+        <hr />
         <div class="row">
             <div class="col-6">
-                <h5>Email: {{provider.email}}</h5>
-                <h5>Phone: {{provider.phone}}</h5>
+                <h5><b>Email:</b> {{provider.email}}</h5>
+                <h5><b>Phone:</b> {{provider.phone}}</h5>
             </div>
             <div class="col-6">
-                <h5>Websice: {{provider.website}}</h5>
-                <h5>Address: {{provider.address}}</h5>
+                <h5><b>Websice:</b> {{provider.website}}</h5>
+                <h5><b>Address: </b>{{provider.address}}</h5>
             </div>
         </div>
     </div>
