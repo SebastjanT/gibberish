@@ -13,7 +13,6 @@ export class UserService {
   public getAllData(id, callback){
     this.httpClient.get(`http://awseb-awseb-1qbqaq27at9fe-1327949958.eu-central-1.elb.amazonaws.com/api/users/${id}`).subscribe(
       (data)=>{
-        console.log(data);
         callback(data);
       },
       (error)=>{

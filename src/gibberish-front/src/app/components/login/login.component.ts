@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
   onSuccess(){
     if(this.jwtService.isLoggedIn()){
       this.userService.getAllData(this.jwtService.getData().id, data=>{
-        this.nameSurnameService.changeMessage(data.user.name+' '+data.user.surname);
+        this.nameSurnameService.changeMessage(data.name+' '+data.surname);
         this.router.navigateByUrl('/main');
       });
     }

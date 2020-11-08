@@ -53,12 +53,18 @@ export class LayoutComponent implements OnInit {
       //Set the appropriate data
       this.user=new User();
       this.userService.getAllData(this.jwtService.getData().id, data=>{
-        this.user.name=data.user.name;
-        this.user.surname=data.user.surname;
-        this.user.user_type=data.user.user_type;
+        this.user.name=data.name;
+        this.user.surname=data.surname;
+        this.user.user_type=(data.user_type=='client') ? 'customer' : data.user_type;
+        this.user.phone=data.phone;
+        this.user.email=data.email;
+        this.user.address=data.address;
         this.nameSurnameService.changeMessage(`${this.user.name} ${this.user.surname}`);
         this.router.navigateByUrl('/main');
       });
+    }
+    else{
+      this.user=new User();
     }
   }
 

@@ -1,5 +1,16 @@
 <div class="row" *ngIf="layoutComponent.user.user_type=='customer'">
-    <h2>Customer can see this</h2>
+    <div class="col border border-info p-2 bg-white rounded mt-4 shadow-lg">
+        <h2>{{layoutComponent.user.surname}}, {{layoutComponent.user.name}}</h2><br />
+        <div class="row">
+            <div class="col-6">
+                <h5>Email: {{layoutComponent.user.email}}</h5>
+                <h5>Phone: {{layoutComponent.user.phone}}</h5>
+            </div>
+            <div class="col-6">
+                <h5>Address: {{layoutComponent.user.address}}</h5>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="row" *ngIf="layoutComponent.user.user_type=='worker'">
     <h2>Worker can see this</h2>
