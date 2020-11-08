@@ -4,3 +4,12 @@
     font-weight: 700;
     font-size: xx-large;
 }
+
+#loginButton {
+    background-color:#EF9A9A;
+    border-radius: 15px;
+}
+
+.text-input  {
+    border-radius: 15px;
+}

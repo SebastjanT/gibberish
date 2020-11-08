@@ -17,9 +17,9 @@
     </div>
   </div>
   <div *ngIf="!loggedIn()">
-    <a class="text-light col-auto" routerLink="/login">Login</a>
-    <a class="text-light col-auto" routerLink="/register">Register</a>
-    <button class="btn btn-sm btn-warning" (click)="switchToDevice()">Device</button>
+    <a class="text-dark col-auto m-2" routerLink="/login"><b>Login</b></a>
+    <a class="text-dark col-auto m-2" routerLink="/register"><b>Register</b></a>
+    <button class="btn btn-sm btn-warning m-2" (click)="switchToDevice()"></button>
   </div>
 </nav>
 

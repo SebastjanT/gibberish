@@ -2,3 +2,13 @@
 * {
     font-family:'Roboto', sans-serif;
 }
+a, a:hover{
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    background-color: #C5E1A5;
+    border-radius: 15px;
+    padding: 0.7em;
+}
