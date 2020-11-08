@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "gibberish-front"
+    }
+  },
+  "defaultProject": "gibberish-front",
+  "cli": {
+    "analytics": "fa5a3fbe-151d-41bc-8d7a-d18c87f8bab3"
+  }
 }

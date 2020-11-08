@@ -12,6 +12,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RegisterComponent } from './components/register/register.component';
 import { MainComponent } from './components/main/main.component';
 import { DeviceComponent } from './components/device/device.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [

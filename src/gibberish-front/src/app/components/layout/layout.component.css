@@ -1,0 +1,17 @@
+.navbar
+{
+    border-bottom:3px solid #000;
+    background-color:whitesmoke;
+    font-family:'Roboto', sans-serif;
+    text-transform: uppercase;
+}
+
+.navbar-brand {
+    font-family: 'Libre Baskerville', serif !important;
+    font-size: xx-large;
+    font-weight: 700;
+}
+
+text {
+    
+}
